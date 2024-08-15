@@ -1,6 +1,7 @@
 package com.example.game
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
@@ -35,12 +36,18 @@ class Level : AppCompatActivity() {
     )
 
     var ans = arrayOf("twitter", "nike", "netflix", "facebook", "mcdonald's", "amazon","adidas","whatsapp","telegram","instagram","tiktok","youtube","monster","mercedes","starbucks","android","linkdin","spotify","photoshop","chrome","email","google","snapchat","window")
+    lateinit var showlevelname:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level)
 
         re = findViewById(R.id.re)
+        showlevelname = findViewById(R.id.showlevelname)
+
+        var n=intent.getIntExtra("levelname",1)
+
+        showlevelname.setText("Level ${n}")
 
         var adapter = ShowLevel(this, img,ans)
         re.adapter = adapter

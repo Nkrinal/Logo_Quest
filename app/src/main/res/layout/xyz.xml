@@ -1,17 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/level"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/showlevel"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/i"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:layout_width="350dp"
+        android:layout_height="600dp">
+
+        <ImageView
+            android:id="@+id/level"
+            android:layout_width="350dp"
+            android:layout_height="600dp"
+            android:background="@drawable/showlevel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/addlevelimg"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55">
+
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="142dp"
+                android:layout_gravity="center"
+                android:src="@drawable/level1" />
+        </LinearLayout>
+
+        <ImageButton
+            app:layout_constraintVertical_bias="0.77"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nextbtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="268dp"
+        app:layout_constraintBottom_toBottomOf="@+id/i"
+        app:layout_constraintEnd_toEndOf="@+id/i"
+        app:layout_constraintStart_toStartOf="@+id/i"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7">
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/lock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="@+id/i"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:src="@drawable/ribbion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txtlevel"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/font"
+            android:gravity="center"
+            android:textColor="@color/textcolor"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.45" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintVertical_bias="0.98"
+        app:layout_constraintHorizontal_bias="0.53"
+        android:layout_width="225dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/i"
+        app:layout_constraintEnd_toEndOf="@+id/i"
+        app:layout_constraintStart_toStartOf="@+id/i"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="50dp"
+                android:layout_height="90dp">
+                <ImageView
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/soundbutton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp">
+                    <TextView
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/tcolor"
+                        android:text="Sound"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="50dp"
+                android:layout_height="90dp">
+                <ImageView
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/helpbutton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp">
+                    <TextView
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/tcolor"
+                        android:text="Help"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="50dp"
+                android:layout_height="90dp">
+                <ImageView
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/repalybutton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp">
+                    <TextView
+                        android:textSize="11dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/font"
+                        android:textColor="@color/tcolor"
+                        android:text="Replace"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,9 +27,9 @@
         android:layout_marginTop="10dp"
         android:layout_width="95dp"
         android:layout_height="95dp"
-        android:backgroundTint="#D9D9D9"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:backgroundTint="@color/boxcolor"
         app:cardCornerRadius="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,8 +38,8 @@
         <ImageView
             android:id="@+id/images"
             android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,9 @@
 package com.example.game
 
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
+import android.view.Gravity
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -31,6 +32,7 @@ class ShowImage : AppCompatActivity() {
         botton=findViewById(R.id.botton)
         sbotton=findViewById(R.id.sbotton)
 
+        val font = Typeface.createFromAsset(assets,"font.ttf")
         var im=intent.getIntExtra("img",0)
         var ans=intent.getStringExtra("ans")
 
@@ -38,29 +40,7 @@ class ShowImage : AppCompatActivity() {
 
         for(i in 0 until ans!!.length)
         {
-            val textView2 = TextView(this)
             val textView1 = TextView(this)
-            textView2.textSize = 20f
-            textView2.setBackgroundColor(Color.BLACK)
-            val paramss = LinearLayout.LayoutParams(
-                80,80
-            )
-            paramss.setMargins(5,10,5,10)
-            textView2.setLayoutParams(paramss)
-            textView2.setTextColor(resources.getColor(android.R.color.black))
-            textView2.setBackgroundResource(R.color.white)
-
-            textView2.setText(ans[i].toString())
-            textView2.setOnClickListener {
-                    textView1.setText(textView2.text.toString())
-                    textView2.setText("")
-                textView2.postDelayed({
-                    stop.removeView(textView2)
-                }, 1)
-                textView2.postDelayed({
-                    sbotton.removeView(textView2)
-                }, 1)
-            }
 
             textView1.textSize = 20f
             textView1.setBackgroundColor(Color.BLACK)
@@ -69,23 +49,53 @@ class ShowImage : AppCompatActivity() {
             )
             params.setMargins(5,10,5,10)
             textView1.setLayoutParams(params)
-            textView1.setTextColor(resources.getColor(android.R.color.black))
-            textView1.setBackgroundResource(R.color.white)
-            if(i<5)
+            textView1.setText(ans[i].toString().toUpperCase())
+            textView1.setGravity(Gravity.CENTER_HORIZONTAL);
+            textView1.setTextColor(resources.getColor(R.color.tcolor))
+            textView1.typeface = font
+            textView1.setBackgroundResource(R.drawable.textbackground)
+            if(i<6)
             {
-                stop.addView(textView2)
                 top.addView(textView1)
             }
             else
             {
-                sbotton.addView(textView2)
                 botton.addView(textView1)
             }
+        }
 
+        for(i in 0 until 12)
+        {
+            val textView2 = TextView(this)
+            val paramss = LinearLayout.LayoutParams(
+                60,60
+            )
+            paramss.setMargins(5,10,5,10)
+
+            textView2.textSize = 20f
+            textView2.setBackgroundColor(Color.BLACK)
+            textView2.setLayoutParams(paramss)
+            textView2.setTextColor(resources.getColor(R.color.tcolor))
+            textView2.setBackgroundResource(R.drawable.textviewbackground1)
+            textView2.setGravity(Gravity.CENTER_HORIZONTAL);
+            textView2.setTextColor(resources.getColor(R.color.tcolor))
+            textView2.typeface = font
+            if(i<6)
+            {
+                stop.addView(textView2)
+            }
+            else
+            {
+                sbotton.addView(textView2)
+            }
+            textView2.setOnClickListener {
+
+            }
         }
 
 
     }
+
 
 
 }
